@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		7B9B78E22BEFCB2200DFE6DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B78E12BEFCB2200DFE6DE /* AppDelegate.swift */; };
 		7B9B78E42BEFCB2200DFE6DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B78E32BEFCB2200DFE6DE /* SceneDelegate.swift */; };
-		7B9B78E62BEFCB2200DFE6DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B78E52BEFCB2200DFE6DE /* ViewController.swift */; };
+		7B9B78E62BEFCB2200DFE6DE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B78E52BEFCB2200DFE6DE /* LoginViewController.swift */; };
 		7B9B78E92BEFCB2200DFE6DE /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 7B9B78E82BEFCB2200DFE6DE /* Base */; };
 		7B9B78EC2BEFCB2200DFE6DE /* BubbleGame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B78EA2BEFCB2200DFE6DE /* BubbleGame.xcdatamodeld */; };
 		7B9B78EE2BEFCB2400DFE6DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B9B78ED2BEFCB2400DFE6DE /* Assets.xcassets */; };
@@ -40,7 +40,7 @@
 		7B9B78DE2BEFCB2200DFE6DE /* BubbleGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BubbleGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B9B78E12BEFCB2200DFE6DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B9B78E32BEFCB2200DFE6DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7B9B78E52BEFCB2200DFE6DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7B9B78E52BEFCB2200DFE6DE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7B9B78E82BEFCB2200DFE6DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7B9B78EB2BEFCB2200DFE6DE /* BubbleGame.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BubbleGame.xcdatamodel; sourceTree = "<group>"; };
 		7B9B78ED2BEFCB2400DFE6DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 			children = (
 				7B9B78E12BEFCB2200DFE6DE /* AppDelegate.swift */,
 				7B9B78E32BEFCB2200DFE6DE /* SceneDelegate.swift */,
-				7B9B78E52BEFCB2200DFE6DE /* ViewController.swift */,
+				7B9B78E52BEFCB2200DFE6DE /* LoginViewController.swift */,
 				7B9B78E72BEFCB2200DFE6DE /* Main.storyboard */,
 				7B9B78ED2BEFCB2400DFE6DE /* Assets.xcassets */,
 				7B9B78EF2BEFCB2400DFE6DE /* LaunchScreen.storyboard */,
@@ -261,7 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B9B78E62BEFCB2200DFE6DE /* ViewController.swift in Sources */,
+				7B9B78E62BEFCB2200DFE6DE /* LoginViewController.swift in Sources */,
 				7B9B78EC2BEFCB2200DFE6DE /* BubbleGame.xcdatamodeld in Sources */,
 				7B9B78E22BEFCB2200DFE6DE /* AppDelegate.swift in Sources */,
 				7B9B78E42BEFCB2200DFE6DE /* SceneDelegate.swift in Sources */,
