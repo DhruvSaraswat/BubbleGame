@@ -8,7 +8,6 @@
 import UIKit
 
 final class LoginViewController: UIViewController {
-
     @IBOutlet private weak var usernameTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
 
@@ -17,12 +16,14 @@ final class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        viewModel.loginViewObserver = { [weak self] state in
+        viewModel.loginViewObserver = { [unowned self] state in
             switch state {
             case .showNextScreen:
                 DispatchQueue.main.async {
-                    let vc = DifficultyLevelViewController()
-                    self?.show(vc, sender: self)
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "DifficultyLevelViewController") as! DifficultyLevelViewController
+                    vc.modalPresentationStyle = .custom
+                    vc.transitioningDelegate = self
+                    self.present(vc, animated: true, completion: nil)
                 }
             }
         }
@@ -33,5 +34,10 @@ final class LoginViewController: UIViewController {
             await viewModel.authenticate(username: usernameTextField.text, password: passwordTextField.text)
         }
     }
-    
+}
+
+extension LoginViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> (any UIViewControllerAnimatedTransitioning)? {
+        PresentAnimation()
+    }
 }

@@ -23,8 +23,8 @@
 		7B9B791D2BF134A100DFE6DE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B791C2BF134A100DFE6DE /* LoginViewModel.swift */; };
 		7B9B79222BF1355E00DFE6DE /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B79212BF1355E00DFE6DE /* LoginResponse.swift */; };
 		7B9B79272BF20E0300DFE6DE /* DifficultyLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B79252BF20E0300DFE6DE /* DifficultyLevelViewController.swift */; };
-		7B9B79282BF20E0300DFE6DE /* DifficultyLevelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B9B79262BF20E0300DFE6DE /* DifficultyLevelViewController.xib */; };
 		7B9B792A2BF227B100DFE6DE /* DifficultyLevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B79292BF227B100DFE6DE /* DifficultyLevelViewModel.swift */; };
+		7B9B792C2BF28FD300DFE6DE /* PresentAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B792B2BF28FD300DFE6DE /* PresentAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,8 +65,8 @@
 		7B9B791C2BF134A100DFE6DE /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		7B9B79212BF1355E00DFE6DE /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		7B9B79252BF20E0300DFE6DE /* DifficultyLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyLevelViewController.swift; sourceTree = "<group>"; };
-		7B9B79262BF20E0300DFE6DE /* DifficultyLevelViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DifficultyLevelViewController.xib; sourceTree = "<group>"; };
 		7B9B79292BF227B100DFE6DE /* DifficultyLevelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyLevelViewModel.swift; sourceTree = "<group>"; };
+		7B9B792B2BF28FD300DFE6DE /* PresentAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +180,7 @@
 			children = (
 				7B9B78E52BEFCB2200DFE6DE /* LoginViewController.swift */,
 				7B9B791C2BF134A100DFE6DE /* LoginViewModel.swift */,
+				7B9B792B2BF28FD300DFE6DE /* PresentAnimation.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -188,7 +189,6 @@
 			isa = PBXGroup;
 			children = (
 				7B9B79252BF20E0300DFE6DE /* DifficultyLevelViewController.swift */,
-				7B9B79262BF20E0300DFE6DE /* DifficultyLevelViewController.xib */,
 				7B9B79292BF227B100DFE6DE /* DifficultyLevelViewModel.swift */,
 			);
 			path = DifficultyLevel;
@@ -298,7 +298,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B9B79282BF20E0300DFE6DE /* DifficultyLevelViewController.xib in Resources */,
 				7B9B78EE2BEFCB2400DFE6DE /* Assets.xcassets in Resources */,
 				7B9B78F12BEFCB2400DFE6DE /* Base in Resources */,
 				7B9B78E92BEFCB2200DFE6DE /* Base in Resources */,
@@ -336,6 +335,7 @@
 				7B9B78E22BEFCB2200DFE6DE /* AppDelegate.swift in Sources */,
 				7B9B792A2BF227B100DFE6DE /* DifficultyLevelViewModel.swift in Sources */,
 				7B9B79162BF0DE7C00DFE6DE /* APIRequest.swift in Sources */,
+				7B9B792C2BF28FD300DFE6DE /* PresentAnimation.swift in Sources */,
 				7B9B78E42BEFCB2200DFE6DE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
