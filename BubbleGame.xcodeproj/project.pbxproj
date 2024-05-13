@@ -17,6 +17,11 @@
 		7B9B78FC2BEFCB2400DFE6DE /* BubbleGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B78FB2BEFCB2400DFE6DE /* BubbleGameTests.swift */; };
 		7B9B79062BEFCB2400DFE6DE /* BubbleGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B79052BEFCB2400DFE6DE /* BubbleGameUITests.swift */; };
 		7B9B79082BEFCB2400DFE6DE /* BubbleGameUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B79072BEFCB2400DFE6DE /* BubbleGameUITestsLaunchTests.swift */; };
+		7B9B79162BF0DE7C00DFE6DE /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B79152BF0DE7C00DFE6DE /* APIRequest.swift */; };
+		7B9B79182BF1218900DFE6DE /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B79172BF1218900DFE6DE /* Request.swift */; };
+		7B9B791A2BF1336200DFE6DE /* NetworkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B79192BF1336200DFE6DE /* NetworkEngine.swift */; };
+		7B9B791D2BF134A100DFE6DE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B791C2BF134A100DFE6DE /* LoginViewModel.swift */; };
+		7B9B79222BF1355E00DFE6DE /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B79212BF1355E00DFE6DE /* LoginResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,11 @@
 		7B9B79012BEFCB2400DFE6DE /* BubbleGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BubbleGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B9B79052BEFCB2400DFE6DE /* BubbleGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleGameUITests.swift; sourceTree = "<group>"; };
 		7B9B79072BEFCB2400DFE6DE /* BubbleGameUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleGameUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7B9B79152BF0DE7C00DFE6DE /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		7B9B79172BF1218900DFE6DE /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		7B9B79192BF1336200DFE6DE /* NetworkEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEngine.swift; sourceTree = "<group>"; };
+		7B9B791C2BF134A100DFE6DE /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		7B9B79212BF1355E00DFE6DE /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +111,11 @@
 		7B9B78E02BEFCB2200DFE6DE /* BubbleGame */ = {
 			isa = PBXGroup;
 			children = (
+				7B9B791E2BF1353000DFE6DE /* Model */,
+				7B9B791B2BF1348D00DFE6DE /* Modules */,
+				7B9B79142BF0DE5F00DFE6DE /* NetworkLayer */,
 				7B9B78E12BEFCB2200DFE6DE /* AppDelegate.swift */,
 				7B9B78E32BEFCB2200DFE6DE /* SceneDelegate.swift */,
-				7B9B78E52BEFCB2200DFE6DE /* LoginViewController.swift */,
 				7B9B78E72BEFCB2200DFE6DE /* Main.storyboard */,
 				7B9B78ED2BEFCB2400DFE6DE /* Assets.xcassets */,
 				7B9B78EF2BEFCB2400DFE6DE /* LaunchScreen.storyboard */,
@@ -128,6 +140,33 @@
 				7B9B79072BEFCB2400DFE6DE /* BubbleGameUITestsLaunchTests.swift */,
 			);
 			path = BubbleGameUITests;
+			sourceTree = "<group>";
+		};
+		7B9B79142BF0DE5F00DFE6DE /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				7B9B79152BF0DE7C00DFE6DE /* APIRequest.swift */,
+				7B9B79172BF1218900DFE6DE /* Request.swift */,
+				7B9B79192BF1336200DFE6DE /* NetworkEngine.swift */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		7B9B791B2BF1348D00DFE6DE /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				7B9B78E52BEFCB2200DFE6DE /* LoginViewController.swift */,
+				7B9B791C2BF134A100DFE6DE /* LoginViewModel.swift */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		7B9B791E2BF1353000DFE6DE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7B9B79212BF1355E00DFE6DE /* LoginResponse.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,8 +301,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B9B78E62BEFCB2200DFE6DE /* LoginViewController.swift in Sources */,
+				7B9B79182BF1218900DFE6DE /* Request.swift in Sources */,
+				7B9B79222BF1355E00DFE6DE /* LoginResponse.swift in Sources */,
+				7B9B791A2BF1336200DFE6DE /* NetworkEngine.swift in Sources */,
 				7B9B78EC2BEFCB2200DFE6DE /* BubbleGame.xcdatamodeld in Sources */,
+				7B9B791D2BF134A100DFE6DE /* LoginViewModel.swift in Sources */,
 				7B9B78E22BEFCB2200DFE6DE /* AppDelegate.swift in Sources */,
+				7B9B79162BF0DE7C00DFE6DE /* APIRequest.swift in Sources */,
 				7B9B78E42BEFCB2200DFE6DE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
