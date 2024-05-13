@@ -12,6 +12,7 @@ final class BubblesViewController: UIViewController {
     @IBOutlet private weak var introductoryCountdownLabel: UILabel!
 
     private let queue = DispatchQueue(label: "com.timer")
+    private let utility = Utility()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,8 @@ final class BubblesViewController: UIViewController {
     }
 
     private func startIntroductoryCountdownTimer() {
-        executeRepeatedly(forCounts: 5, currentCount: 0) { [unowned self] currentCount in
+        utility.executeRepeatedly(forCounts: 6, currentCount: 0, queue: queue,
+                                  handler: { [unowned self] currentCount in
             DispatchQueue.main.async {
                 UIView.transition(with: self.introductoryCountdownLabel,
                                   duration: 0.5,
@@ -37,20 +39,10 @@ final class BubblesViewController: UIViewController {
                     }
                 })
             }
-        }
-    }
-
-    private func executeRepeatedly(forCounts totalCount: Int, currentCount: Int, handler: @escaping (Int) -> Void) {
-        guard currentCount < totalCount else {
-            hideIntroductoryCountdownLabel()
-            showCountdownLabel()
-            return
-        }
-
-        queue.asyncAfter(deadline: .now() + 1) { [weak self] in
-            handler(currentCount)
-            self?.executeRepeatedly(forCounts: totalCount, currentCount: currentCount + 1, handler: handler)
-        }
+        }, countdownCompletion: { [unowned self] in
+            self.hideIntroductoryCountdownLabel()
+            self.showCountdownLabel()
+        })
     }
 
     private func showIntroductoryCountdownLabel() {
