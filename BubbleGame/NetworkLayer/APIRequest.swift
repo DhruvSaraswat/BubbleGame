@@ -11,7 +11,6 @@ enum APIError: Error {
     case requestCreationFailed
     case serverError(error: Error)
     case serverError(statusCode: Int)
-    case unableToParseResponse(data: Data)
 }
 
 protocol APIRequest {

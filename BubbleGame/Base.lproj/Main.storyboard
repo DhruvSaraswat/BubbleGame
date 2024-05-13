@@ -88,14 +88,24 @@
                                 <state key="normal" title="Please select ..."/>
                                 <buttonConfiguration key="configuration" style="gray" title="Please select ..." titleAlignment="center"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6V-DE-Te8">
+                                <rect key="frame" x="143.33333333333334" y="434.33333333333331" width="106.33333333333334" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Let's Play !"/>
+                                <connections>
+                                    <action selector="handlePlayButtonTap:" destination="vJg-d5-nZG" eventType="touchUpInside" id="Sxx-cl-Pwk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ruR-P7-i6B"/>
                         <color key="backgroundColor" red="0.67843137254901964" green="0.84705882352941175" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="g6V-DE-Te8" firstAttribute="top" secondItem="fbV-om-88c" secondAttribute="bottom" constant="50" id="FHN-b7-KSb"/>
                             <constraint firstItem="fbV-om-88c" firstAttribute="top" secondItem="Mo6-oz-hGE" secondAttribute="bottom" constant="50" id="RVG-va-i4p"/>
                             <constraint firstItem="Mo6-oz-hGE" firstAttribute="leading" secondItem="ruR-P7-i6B" secondAttribute="leading" constant="20" id="Ubt-pm-nDs"/>
                             <constraint firstItem="Mo6-oz-hGE" firstAttribute="centerX" secondItem="ruR-P7-i6B" secondAttribute="centerX" id="V4a-mO-gFN"/>
                             <constraint firstItem="fbV-om-88c" firstAttribute="centerX" secondItem="ruR-P7-i6B" secondAttribute="centerX" id="b9N-Vv-A9O"/>
+                            <constraint firstItem="g6V-DE-Te8" firstAttribute="centerX" secondItem="ruR-P7-i6B" secondAttribute="centerX" id="eDm-dv-0Un"/>
                             <constraint firstItem="Mo6-oz-hGE" firstAttribute="top" secondItem="ruR-P7-i6B" secondAttribute="top" constant="136" id="wco-wX-ge5"/>
                         </constraints>
                     </view>
@@ -106,6 +116,46 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qZ1-vf-RpW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="799" y="4"/>
+        </scene>
+        <!--Bubbles View Controller-->
+        <scene sceneID="pog-VV-yqt">
+            <objects>
+                <viewController storyboardIdentifier="BubblesViewController" id="qwW-FY-k01" customClass="BubblesViewController" customModule="BubbleGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="n7v-Je-mXb">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWF-8H-goc">
+                                <rect key="frame" x="181.33333333333334" y="79" width="30.666666666666657" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfz-mH-w4t">
+                                <rect key="frame" x="20" y="412.33333333333331" width="353" height="52.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="44"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8EX-if-PPx"/>
+                        <color key="backgroundColor" red="0.67843137254901964" green="0.84705882352941175" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jWF-8H-goc" firstAttribute="top" secondItem="8EX-if-PPx" secondAttribute="top" constant="20" id="C4R-ku-DSW"/>
+                            <constraint firstItem="gfz-mH-w4t" firstAttribute="centerX" secondItem="8EX-if-PPx" secondAttribute="centerX" id="CQj-qZ-Jqm"/>
+                            <constraint firstItem="gfz-mH-w4t" firstAttribute="centerY" secondItem="8EX-if-PPx" secondAttribute="centerY" id="JBs-B8-dw6"/>
+                            <constraint firstItem="gfz-mH-w4t" firstAttribute="leading" secondItem="8EX-if-PPx" secondAttribute="leading" constant="20" id="dGk-mQ-m7V"/>
+                            <constraint firstItem="jWF-8H-goc" firstAttribute="centerX" secondItem="8EX-if-PPx" secondAttribute="centerX" id="qgg-6o-CM8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="countdownLabel" destination="jWF-8H-goc" id="5hv-4L-ozK"/>
+                        <outlet property="introductoryCountdownLabel" destination="gfz-mH-w4t" id="Gn3-Ja-whe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xnB-zm-zw5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1567" y="4"/>
         </scene>
     </scenes>
 </document>

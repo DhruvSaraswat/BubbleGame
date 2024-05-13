@@ -25,6 +25,7 @@
 		7B9B79272BF20E0300DFE6DE /* DifficultyLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B79252BF20E0300DFE6DE /* DifficultyLevelViewController.swift */; };
 		7B9B792A2BF227B100DFE6DE /* DifficultyLevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B79292BF227B100DFE6DE /* DifficultyLevelViewModel.swift */; };
 		7B9B792C2BF28FD300DFE6DE /* PresentAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B792B2BF28FD300DFE6DE /* PresentAnimation.swift */; };
+		7B9B792F2BF2AAC900DFE6DE /* BubblesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B792E2BF2AAC900DFE6DE /* BubblesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		7B9B79252BF20E0300DFE6DE /* DifficultyLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyLevelViewController.swift; sourceTree = "<group>"; };
 		7B9B79292BF227B100DFE6DE /* DifficultyLevelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyLevelViewModel.swift; sourceTree = "<group>"; };
 		7B9B792B2BF28FD300DFE6DE /* PresentAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentAnimation.swift; sourceTree = "<group>"; };
+		7B9B792E2BF2AAC900DFE6DE /* BubblesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubblesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 		7B9B791B2BF1348D00DFE6DE /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				7B9B792D2BF2AAB300DFE6DE /* Game */,
 				7B9B79242BF20DD300DFE6DE /* DifficultyLevel */,
 				7B9B79232BF20D3A00DFE6DE /* Login */,
 			);
@@ -192,6 +195,14 @@
 				7B9B79292BF227B100DFE6DE /* DifficultyLevelViewModel.swift */,
 			);
 			path = DifficultyLevel;
+			sourceTree = "<group>";
+		};
+		7B9B792D2BF2AAB300DFE6DE /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				7B9B792E2BF2AAC900DFE6DE /* BubblesViewController.swift */,
+			);
+			path = Game;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B9B78E62BEFCB2200DFE6DE /* LoginViewController.swift in Sources */,
+				7B9B792F2BF2AAC900DFE6DE /* BubblesViewController.swift in Sources */,
 				7B9B79182BF1218900DFE6DE /* Request.swift in Sources */,
 				7B9B79222BF1355E00DFE6DE /* LoginResponse.swift in Sources */,
 				7B9B791A2BF1336200DFE6DE /* NetworkEngine.swift in Sources */,

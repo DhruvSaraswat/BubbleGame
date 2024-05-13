@@ -8,7 +8,7 @@
 import Foundation
 
 protocol NetworkEngine {
-    func request<T: Codable>(request: APIRequest) async -> (Result<T?, APIError>)
+    func request(request: APIRequest) async -> (Result<Data?, APIError>)
 }
 
 struct NetworkEngineImpl: NetworkEngine {
@@ -18,7 +18,7 @@ struct NetworkEngineImpl: NetworkEngine {
         self.urlSession = urlSession
     }
 
-    func request<T: Codable>(request: APIRequest) async -> (Result<T?, APIError>) {
+    func request(request: APIRequest) async -> (Result<Data?, APIError>) {
         guard let urlRequest = buildURLRequest(from: request) else {
             return .failure(.requestCreationFailed)
         }
@@ -31,14 +31,7 @@ struct NetworkEngineImpl: NetworkEngine {
             return .failure(.serverError(error: error))
         }
 
-        guard !apiResponse.data.isEmpty else {
-            return .success(nil)
-        }
-
-        if let responseObject = try? JSONDecoder().decode(T.self, from: apiResponse.data) {
-            return .success(responseObject)
-        }
-        return .failure(.unableToParseResponse(data: apiResponse.data))
+        return .success(apiResponse.data)
     }
 
     func buildURLRequest(from apiRequest: APIRequest) -> URLRequest? {

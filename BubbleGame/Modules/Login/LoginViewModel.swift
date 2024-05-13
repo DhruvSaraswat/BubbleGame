@@ -24,11 +24,12 @@ struct LoginViewModel {
             /// Show an error toast
             return
         }
-        let apiResult: Result<LoginResponse?, APIError> = await networkEngine.request(request: Request.authenticate(username: username, password: password))
+        let apiResult = await networkEngine.request(request: Request.authenticate(username: username, password: password))
 
         switch apiResult {
         case .success(let loginResponse):
-            guard let response = loginResponse,
+            guard let responseData = loginResponse,
+                  let response = try? JSONDecoder().decode(LoginResponse.self, from: responseData),
                   let sessionID = response.message,
                   let status = response.status, status.lowercased().elementsEqual("success") else {
                 /// Show an error toast
