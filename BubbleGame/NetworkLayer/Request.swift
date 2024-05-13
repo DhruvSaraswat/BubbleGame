@@ -9,6 +9,7 @@ import Foundation
 
 enum Request: APIRequest {
     case authenticate(username: String, password: String)
+    case getLevelDetails(level: Int)
 
     var scheme: String {
         "http"
@@ -22,6 +23,8 @@ enum Request: APIRequest {
         switch self {
         case .authenticate:
             return "/authenticate"
+        case .getLevelDetails:
+            return "/leveldetails"
         }
     }
 
@@ -30,16 +33,15 @@ enum Request: APIRequest {
     }
 
     var headers: [String : String]? {
-        switch self {
-        case .authenticate:
-            return nil
-        }
+        nil
     }
 
     var query: String? {
         switch self {
         case .authenticate(let username, let password):
             return "login={\"username\":\"\(username)\",\"password\":\"\(password)\"}"
+        case .getLevelDetails(let level):
+            return "level=\(level)"
         }
     }
 
@@ -54,13 +56,12 @@ enum Request: APIRequest {
         switch self {
         case .authenticate:
             return HTTPMethod.post
+        case .getLevelDetails:
+            return HTTPMethod.get
         }
     }
 
     var requestBody: [String : Any]? {
-        switch self {
-        case .authenticate:
-            return nil
-        }
+        nil
     }
 }

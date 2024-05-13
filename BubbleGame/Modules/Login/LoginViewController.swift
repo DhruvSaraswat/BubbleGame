@@ -10,13 +10,22 @@ import UIKit
 final class LoginViewController: UIViewController {
 
     @IBOutlet private weak var usernameTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
 
-    private let viewModel = LoginViewModel()
+    private var viewModel = LoginViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        viewModel.loginViewObserver = { [weak self] state in
+            switch state {
+            case .showNextScreen:
+                DispatchQueue.main.async {
+                    let vc = DifficultyLevelViewController()
+                    self?.show(vc, sender: self)
+                }
+            }
+        }
     }
 
     @IBAction func handleLoginButtonTap(_ sender: Any) {

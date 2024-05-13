@@ -7,8 +7,13 @@
 
 import Foundation
 
+enum LoginViewObserver {
+    case showNextScreen
+}
+
 struct LoginViewModel {
     private let networkEngine: NetworkEngine
+    var loginViewObserver: ((LoginViewObserver) -> Void)?
 
     init(networkEngine: NetworkEngine = NetworkEngineImpl()) {
         self.networkEngine = networkEngine
@@ -30,6 +35,7 @@ struct LoginViewModel {
                 return
             }
             debugPrint("SESSION ID = \(sessionID)")
+            loginViewObserver?(.showNextScreen)
 
         case .failure(let error):
             debugPrint("error in authentication = \(error)")
