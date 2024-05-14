@@ -27,6 +27,7 @@
 		7B9B792C2BF28FD300DFE6DE /* PresentAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B792B2BF28FD300DFE6DE /* PresentAnimation.swift */; };
 		7B9B792F2BF2AAC900DFE6DE /* BubblesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B792E2BF2AAC900DFE6DE /* BubblesViewController.swift */; };
 		7B9B79322BF2B6E900DFE6DE /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B79312BF2B6E900DFE6DE /* Utility.swift */; };
+		7B9B79342BF2BD4000DFE6DE /* Bubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B79332BF2BD4000DFE6DE /* Bubble.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		7B9B792B2BF28FD300DFE6DE /* PresentAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentAnimation.swift; sourceTree = "<group>"; };
 		7B9B792E2BF2AAC900DFE6DE /* BubblesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubblesViewController.swift; sourceTree = "<group>"; };
 		7B9B79312BF2B6E900DFE6DE /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		7B9B79332BF2BD4000DFE6DE /* Bubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bubble.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				7B9B792E2BF2AAC900DFE6DE /* BubblesViewController.swift */,
+				7B9B79332BF2BD4000DFE6DE /* Bubble.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B9B79322BF2B6E900DFE6DE /* Utility.swift in Sources */,
+				7B9B79342BF2BD4000DFE6DE /* Bubble.swift in Sources */,
 				7B9B78E62BEFCB2200DFE6DE /* LoginViewController.swift in Sources */,
 				7B9B792F2BF2AAC900DFE6DE /* BubblesViewController.swift in Sources */,
 				7B9B79182BF1218900DFE6DE /* Request.swift in Sources */,
