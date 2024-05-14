@@ -30,11 +30,13 @@ final class BubbleViewModel: Hashable {
     var updateLabelObserver: ((BubbleObserver) -> Void)?
     private var timer: DispatchSourceTimer?
     private var count: Int = 0
+    private var countdownRate: Int
 
-    init(id: String, timerQueue: DispatchQueue, delegate: BubbleDelegate) {
+    init(id: String, timerQueue: DispatchQueue, delegate: BubbleDelegate, countdownRate: Int) {
         self.id = id
         self.timerQueue = timerQueue
         self.delegate = delegate
+        self.countdownRate = countdownRate
     }
 
     func startCountdown() {
@@ -47,7 +49,7 @@ final class BubbleViewModel: Hashable {
                 return
             }
             updateLabelObserver?(.updateBubbleLabel(value: "\(10 - count)"))
-            count += 1
+            count += countdownRate
         }
         timer?.activate()
     }

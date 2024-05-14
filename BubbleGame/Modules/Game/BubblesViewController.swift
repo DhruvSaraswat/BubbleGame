@@ -15,6 +15,7 @@ final class BubblesViewController: UIViewController {
     private let viewModel = BubblesViewModel()
     private let bubbleTimerQueue = DispatchQueue(label: "com.bubble.timer")
     private let countdownLabelFontSize: CGFloat = 28
+    var rate: Int = 1
 
     private lazy var bubbleWidth: CGFloat = {
         (self.view.window?.windowScene?.screen.bounds.size.width ?? UIScreen.main.bounds.width) / 4
@@ -166,7 +167,7 @@ final class BubblesViewController: UIViewController {
 
         let bubble = BubbleView(frame: CGRect(x: xCenter, y: yCenter, width: bubbleWidth, height: bubbleWidth))
         let id = UUID().uuidString
-        let bubbleViewModel = BubbleViewModel(id: id, timerQueue: bubbleTimerQueue, delegate: self)
+        let bubbleViewModel = BubbleViewModel(id: id, timerQueue: bubbleTimerQueue, delegate: self, countdownRate: rate)
         bubble.viewModel = bubbleViewModel
         bubble.setupObserver()
         viewModel.addBubble(withViewModel: bubbleViewModel, view: bubble)

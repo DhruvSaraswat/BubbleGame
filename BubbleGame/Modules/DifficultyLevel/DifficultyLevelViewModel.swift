@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 enum DifficultyLevelViewObserver {
-    case showNextScreen
+    case showNextScreen(rate: Int)
 }
 
 struct DifficultyLevelViewModel {
@@ -33,11 +33,12 @@ struct DifficultyLevelViewModel {
         switch apiResult {
         case .success(let response):
             guard let responseData = response,
-                  let rate = String(data: responseData, encoding: String.Encoding.utf8) else {
+                  let rate = String(data: responseData, encoding: String.Encoding.utf8),
+                  let intRate = Int(rate) else {
                 /// Show an error toast
                 return
             }
-            difficultyLevelViewObserver?(.showNextScreen)
+            difficultyLevelViewObserver?(.showNextScreen(rate: intRate))
 
         case .failure(let error):
             debugPrint("error in authentication = \(error)")

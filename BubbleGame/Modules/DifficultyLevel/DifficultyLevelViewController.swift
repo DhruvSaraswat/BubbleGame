@@ -20,9 +20,10 @@ final class DifficultyLevelViewController: UIViewController {
         setupButton()
         viewModel.difficultyLevelViewObserver = { [unowned self] state in
             switch state {
-            case .showNextScreen:
+            case .showNextScreen(let rate):
                 DispatchQueue.main.async {
                     let vc = self.storyboard?.instantiateViewController(withIdentifier: "BubblesViewController") as! BubblesViewController
+                    vc.rate = rate
                     vc.modalPresentationStyle = .custom
                     vc.transitioningDelegate = self
                     self.present(vc, animated: true, completion: nil)
