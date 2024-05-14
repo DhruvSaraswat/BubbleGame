@@ -21,7 +21,6 @@
 		7B9B79182BF1218900DFE6DE /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B79172BF1218900DFE6DE /* Request.swift */; };
 		7B9B791A2BF1336200DFE6DE /* NetworkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B79192BF1336200DFE6DE /* NetworkEngine.swift */; };
 		7B9B791D2BF134A100DFE6DE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B791C2BF134A100DFE6DE /* LoginViewModel.swift */; };
-		7B9B79222BF1355E00DFE6DE /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B79212BF1355E00DFE6DE /* LoginResponse.swift */; };
 		7B9B79272BF20E0300DFE6DE /* DifficultyLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B79252BF20E0300DFE6DE /* DifficultyLevelViewController.swift */; };
 		7B9B792A2BF227B100DFE6DE /* DifficultyLevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B79292BF227B100DFE6DE /* DifficultyLevelViewModel.swift */; };
 		7B9B792C2BF28FD300DFE6DE /* PresentAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B792B2BF28FD300DFE6DE /* PresentAnimation.swift */; };
@@ -30,6 +29,11 @@
 		7B9B79342BF2BD4000DFE6DE /* BubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B79332BF2BD4000DFE6DE /* BubbleView.swift */; };
 		7B9B79372BF3339300DFE6DE /* BubbleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B79362BF3339300DFE6DE /* BubbleViewModel.swift */; };
 		7B9B79392BF335A200DFE6DE /* BubblesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B79382BF335A200DFE6DE /* BubblesViewModel.swift */; };
+		7B9B793C2BF3A6DB00DFE6DE /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B793B2BF3A6DB00DFE6DE /* CoreDataService.swift */; };
+		7B9B79462BF3AC5700DFE6DE /* CoreDataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B79452BF3AC5700DFE6DE /* CoreDataWorker.swift */; };
+		7B9B79482BF3B02A00DFE6DE /* APIResponseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B79472BF3B02A00DFE6DE /* APIResponseModels.swift */; };
+		7B9B794A2BF3B05100DFE6DE /* PersistenceModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B79492BF3B05100DFE6DE /* PersistenceModels.swift */; };
+		7B9B794C2BF3B1BC00DFE6DE /* ManagedObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B794B2BF3B1BC00DFE6DE /* ManagedObjectProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +72,6 @@
 		7B9B79172BF1218900DFE6DE /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		7B9B79192BF1336200DFE6DE /* NetworkEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEngine.swift; sourceTree = "<group>"; };
 		7B9B791C2BF134A100DFE6DE /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		7B9B79212BF1355E00DFE6DE /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		7B9B79252BF20E0300DFE6DE /* DifficultyLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyLevelViewController.swift; sourceTree = "<group>"; };
 		7B9B79292BF227B100DFE6DE /* DifficultyLevelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyLevelViewModel.swift; sourceTree = "<group>"; };
 		7B9B792B2BF28FD300DFE6DE /* PresentAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentAnimation.swift; sourceTree = "<group>"; };
@@ -77,6 +80,11 @@
 		7B9B79332BF2BD4000DFE6DE /* BubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleView.swift; sourceTree = "<group>"; };
 		7B9B79362BF3339300DFE6DE /* BubbleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleViewModel.swift; sourceTree = "<group>"; };
 		7B9B79382BF335A200DFE6DE /* BubblesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubblesViewModel.swift; sourceTree = "<group>"; };
+		7B9B793B2BF3A6DB00DFE6DE /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		7B9B79452BF3AC5700DFE6DE /* CoreDataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataWorker.swift; sourceTree = "<group>"; };
+		7B9B79472BF3B02A00DFE6DE /* APIResponseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponseModels.swift; sourceTree = "<group>"; };
+		7B9B79492BF3B05100DFE6DE /* PersistenceModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceModels.swift; sourceTree = "<group>"; };
+		7B9B794B2BF3B1BC00DFE6DE /* ManagedObjectProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedObjectProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,8 +135,8 @@
 		7B9B78E02BEFCB2200DFE6DE /* BubbleGame */ = {
 			isa = PBXGroup;
 			children = (
+				7B9B793A2BF3A66100DFE6DE /* Persistence */,
 				7B9B79302BF2B6D800DFE6DE /* Utility */,
-				7B9B791E2BF1353000DFE6DE /* Model */,
 				7B9B791B2BF1348D00DFE6DE /* Modules */,
 				7B9B79142BF0DE5F00DFE6DE /* NetworkLayer */,
 				7B9B78E12BEFCB2200DFE6DE /* AppDelegate.swift */,
@@ -165,6 +173,7 @@
 				7B9B79152BF0DE7C00DFE6DE /* APIRequest.swift */,
 				7B9B79172BF1218900DFE6DE /* Request.swift */,
 				7B9B79192BF1336200DFE6DE /* NetworkEngine.swift */,
+				7B9B79472BF3B02A00DFE6DE /* APIResponseModels.swift */,
 			);
 			path = NetworkLayer;
 			sourceTree = "<group>";
@@ -177,14 +186,6 @@
 				7B9B79232BF20D3A00DFE6DE /* Login */,
 			);
 			path = Modules;
-			sourceTree = "<group>";
-		};
-		7B9B791E2BF1353000DFE6DE /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				7B9B79212BF1355E00DFE6DE /* LoginResponse.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		7B9B79232BF20D3A00DFE6DE /* Login */ = {
@@ -231,6 +232,17 @@
 				7B9B79362BF3339300DFE6DE /* BubbleViewModel.swift */,
 			);
 			path = Bubble;
+			sourceTree = "<group>";
+		};
+		7B9B793A2BF3A66100DFE6DE /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				7B9B793B2BF3A6DB00DFE6DE /* CoreDataService.swift */,
+				7B9B79452BF3AC5700DFE6DE /* CoreDataWorker.swift */,
+				7B9B79492BF3B05100DFE6DE /* PersistenceModels.swift */,
+				7B9B794B2BF3B1BC00DFE6DE /* ManagedObjectProtocol.swift */,
+			);
+			path = Persistence;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -367,10 +379,10 @@
 				7B9B79322BF2B6E900DFE6DE /* Utility.swift in Sources */,
 				7B9B79342BF2BD4000DFE6DE /* BubbleView.swift in Sources */,
 				7B9B79392BF335A200DFE6DE /* BubblesViewModel.swift in Sources */,
+				7B9B79482BF3B02A00DFE6DE /* APIResponseModels.swift in Sources */,
 				7B9B78E62BEFCB2200DFE6DE /* LoginViewController.swift in Sources */,
 				7B9B792F2BF2AAC900DFE6DE /* BubblesViewController.swift in Sources */,
 				7B9B79182BF1218900DFE6DE /* Request.swift in Sources */,
-				7B9B79222BF1355E00DFE6DE /* LoginResponse.swift in Sources */,
 				7B9B791A2BF1336200DFE6DE /* NetworkEngine.swift in Sources */,
 				7B9B78EC2BEFCB2200DFE6DE /* BubbleGame.xcdatamodeld in Sources */,
 				7B9B79372BF3339300DFE6DE /* BubbleViewModel.swift in Sources */,
@@ -379,7 +391,11 @@
 				7B9B78E22BEFCB2200DFE6DE /* AppDelegate.swift in Sources */,
 				7B9B792A2BF227B100DFE6DE /* DifficultyLevelViewModel.swift in Sources */,
 				7B9B79162BF0DE7C00DFE6DE /* APIRequest.swift in Sources */,
+				7B9B794A2BF3B05100DFE6DE /* PersistenceModels.swift in Sources */,
+				7B9B79462BF3AC5700DFE6DE /* CoreDataWorker.swift in Sources */,
 				7B9B792C2BF28FD300DFE6DE /* PresentAnimation.swift in Sources */,
+				7B9B793C2BF3A6DB00DFE6DE /* CoreDataService.swift in Sources */,
+				7B9B794C2BF3B1BC00DFE6DE /* ManagedObjectProtocol.swift in Sources */,
 				7B9B78E42BEFCB2200DFE6DE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

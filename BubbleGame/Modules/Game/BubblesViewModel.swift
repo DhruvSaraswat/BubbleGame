@@ -9,6 +9,7 @@ import Foundation
 
 final class BubblesViewModel {
     private var bubblesOnScreen: [BubbleViewModel: BubbleView] = [:]
+    private let coreDataWorker: CoreDataWorker? = CoreDataWorker<Score, ScoreObject>()
 
     func addBubble(withViewModel vm: BubbleViewModel, view: BubbleView) {
         bubblesOnScreen[vm] = view
@@ -39,5 +40,10 @@ final class BubblesViewModel {
             score += bubbleViewModel.key.getBubbleScore()
         }
         return score
+    }
+
+    func persistScoreDetails(score: Int, level: Int) {
+        let score = ScoreObject(score: Int64(score), level: Int64(level), timestamp: Date())
+        coreDataWorker?.save(entities: [score]) { _ in }
     }
 }

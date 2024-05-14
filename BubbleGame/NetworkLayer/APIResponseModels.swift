@@ -1,8 +1,8 @@
 //
-//  LoginResponse.swift
+//  APIResponseModels.swift
 //  BubbleGame
 //
-//  Created by Dhruv Saraswat on 12/05/24.
+//  Created by Dhruv Saraswat on 14/05/24.
 //
 
 import Foundation
