@@ -16,11 +16,15 @@ final class HighScoresViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        globalRankLabel.text = rank ?? "N/A"
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        globalRankLabel.text = "Global Rank - \(rank ?? "N/A")"
     }
 
     @IBAction func handlePlayAgainButtonTap(_ sender: Any) {
-        dismiss(animated: true)
+        dismiss(animated: false)
     }
 
 }

@@ -25,9 +25,7 @@ final class BubblesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        hideIntroductoryCountdownLabel()
-        hideCountdownLabel()
-        removeTapGestureRecognizer()
+        resetGame()
         viewModel.observer = { [unowned self] state in
             switch state {
             case .showNextScreen(globalRank: let rank):
@@ -35,16 +33,23 @@ final class BubblesViewController: UIViewController {
                 DispatchQueue.main.async {
                     let vc = self.storyboard?.instantiateViewController(withIdentifier: "HighScoresViewController") as! HighScoresViewController
                     vc.rank = rank
-                    vc.modalPresentationStyle = .custom
-                    vc.transitioningDelegate = self
+                    vc.modalPresentationStyle = .fullScreen
                     self.present(vc, animated: true, completion: nil)
                 }
             }
         }
     }
 
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        resetGame()
         startIntroductoryCountdownTimer()
+    }
+
+    private func resetGame() {
+        hideIntroductoryCountdownLabel()
+        hideCountdownLabel()
+        removeTapGestureRecognizer()
     }
 
     private func startIntroductoryCountdownTimer() {
@@ -169,15 +174,5 @@ final class BubblesViewController: UIViewController {
 extension BubblesViewController: BubbleDelegate {
     func countdownComplete(forBubble vm: BubbleViewModel) {
         viewModel.removeBubble(withViewModel: vm)
-    }
-}
-
-extension BubblesViewController: UIViewControllerTransitioningDelegate {
-    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> (any UIViewControllerAnimatedTransitioning)? {
-        PresentTransition()
-    }
-
-    func animationController(forDismissed dismissed: UIViewController) -> (any UIViewControllerAnimatedTransitioning)? {
-        DismissTransition()
     }
 }
