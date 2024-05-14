@@ -61,4 +61,8 @@ final class BubbleViewModel: Hashable {
         count = 0
         startCountdown()
     }
+
+    func getBubbleScore() -> Int {
+        11 - count
+    }
 }

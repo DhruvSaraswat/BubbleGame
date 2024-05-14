@@ -15,10 +15,27 @@ final class BubblesViewModel {
     }
 
     func removeBubble(withViewModel vm: BubbleViewModel) {
+        if let bubbleToBeRemoved = getBubbleView(withViewModel: vm) {
+            DispatchQueue.main.async {
+                bubbleToBeRemoved.removeFromSuperview()
+            }
+        }
         bubblesOnScreen[vm] = nil
     }
 
     func getBubbleView(withViewModel vm: BubbleViewModel) -> BubbleView? {
         bubblesOnScreen[vm]
+    }
+
+    func getTotalScore() -> Int {
+        var score: Int = 0
+        for bubbleViewModel in bubblesOnScreen {
+            score += bubbleViewModel.key.getBubbleScore()
+        }
+        return score
+    }
+
+    func getAllBubblesOnScreen() -> [BubbleViewModel: BubbleView] {
+        bubblesOnScreen
     }
 }

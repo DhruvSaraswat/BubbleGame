@@ -14,6 +14,7 @@ final class BubblesViewController: UIViewController {
     private let utility = Utility()
     private let viewModel = BubblesViewModel()
     private let bubbleTimerQueue = DispatchQueue(label: "com.bubble.timer")
+    private let countdownLabelFontSize: CGFloat = 28
 
     private lazy var bubbleWidth: CGFloat = {
         (self.view.window?.windowScene?.screen.bounds.size.width ?? UIScreen.main.bounds.width) / 4
@@ -26,7 +27,6 @@ final class BubblesViewController: UIViewController {
         hideIntroductoryCountdownLabel()
         hideCountdownLabel()
         removeTapGestureRecognizer()
-        // Do any additional setup after loading the view.
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -51,6 +51,30 @@ final class BubblesViewController: UIViewController {
             hideIntroductoryCountdownLabel()
             showCountdownLabel()
             addTapGestureRecognizer()
+            startGameTimer()
+        })
+    }
+
+    private func startGameTimer() {
+        utility.executeRepeatedly(forCounts: 31, currentCount: 0, queue: nil,
+                                  handler: {  [unowned self] currentCount in
+            DispatchQueue.main.async {
+                UIView.transition(with: self.countdownLabel,
+                                  duration: 0.5,
+                                  options: .transitionCrossDissolve,
+                                  animations: { [unowned self] in
+                    countdownLabel.text = "\(30 - currentCount)"
+                    if countdownLabel.isHidden {
+                        showCountdownLabel()
+                    }
+                    if currentCount >= 25 {
+                        highlightCountdownLabel()
+                    }
+                })
+            }
+        }, countdownCompletion: { [unowned self] in
+            removeTapGestureRecognizer()
+            calculateScoreAndRemoveAllBubbles()
         })
     }
 
@@ -68,7 +92,16 @@ final class BubblesViewController: UIViewController {
 
     private func showCountdownLabel() {
         DispatchQueue.main.async { [unowned self] in
+            countdownLabel.font = .systemFont(ofSize: countdownLabelFontSize)
+            countdownLabel.textColor = .black
             countdownLabel.isHidden = false
+        }
+    }
+
+    private func highlightCountdownLabel() {
+        DispatchQueue.main.async { [unowned self] in
+            countdownLabel.font = .systemFont(ofSize: countdownLabelFontSize, weight: .bold)
+            countdownLabel.textColor = .red
         }
     }
 
@@ -91,6 +124,14 @@ final class BubblesViewController: UIViewController {
             if let tapGesture {
                 view.removeGestureRecognizer(tapGesture)
             }
+        }
+    }
+
+    private func calculateScoreAndRemoveAllBubbles() {
+        let score = viewModel.getTotalScore()
+        let allBubbles = viewModel.getAllBubblesOnScreen()
+        for bubble in allBubbles {
+            viewModel.removeBubble(withViewModel: bubble.key)
         }
     }
 
@@ -136,11 +177,6 @@ final class BubblesViewController: UIViewController {
 
 extension BubblesViewController: BubbleDelegate {
     func countdownComplete(forBubble vm: BubbleViewModel) {
-        if let bubbleToBeRemoved = viewModel.getBubbleView(withViewModel: vm) {
-            DispatchQueue.main.async {
-                bubbleToBeRemoved.removeFromSuperview()
-            }
-        }
         viewModel.removeBubble(withViewModel: vm)
     }
 }
