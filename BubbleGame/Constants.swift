@@ -12,4 +12,6 @@ struct Constants {
         static let username = "username"
         static let sessionID = "sessionID"
     }
+
+    static let transitionDuration: TimeInterval = 0.3
 }

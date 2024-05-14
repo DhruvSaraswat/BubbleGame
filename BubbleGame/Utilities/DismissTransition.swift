@@ -14,7 +14,7 @@ final class DismissTransition: NSObject {
 
 extension DismissTransition: UIViewControllerAnimatedTransitioning {
     func transitionDuration(using transitionContext: (any UIViewControllerContextTransitioning)?) -> TimeInterval {
-        0.3
+        Constants.transitionDuration
     }
     
     func animateTransition(using transitionContext: any UIViewControllerContextTransitioning) {

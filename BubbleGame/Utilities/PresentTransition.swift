@@ -14,7 +14,7 @@ final class PresentTransition: NSObject {
 
 extension PresentTransition: UIViewControllerAnimatedTransitioning {
     func transitionDuration(using transitionContext: (any UIViewControllerContextTransitioning)?) -> TimeInterval {
-        0.3
+        Constants.transitionDuration
     }
     
     func animateTransition(using transitionContext: any UIViewControllerContextTransitioning) {
