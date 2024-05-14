@@ -23,6 +23,12 @@ final class BubblesViewModel {
         bubblesOnScreen[vm] = nil
     }
 
+    func removeAllBubbles() {
+        for bubble in bubblesOnScreen {
+            removeBubble(withViewModel: bubble.key)
+        }
+    }
+
     func getBubbleView(withViewModel vm: BubbleViewModel) -> BubbleView? {
         bubblesOnScreen[vm]
     }
@@ -33,9 +39,5 @@ final class BubblesViewModel {
             score += bubbleViewModel.key.getBubbleScore()
         }
         return score
-    }
-
-    func getAllBubblesOnScreen() -> [BubbleViewModel: BubbleView] {
-        bubblesOnScreen
     }
 }

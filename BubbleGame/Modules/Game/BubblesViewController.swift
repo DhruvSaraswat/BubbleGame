@@ -130,10 +130,7 @@ final class BubblesViewController: UIViewController {
 
     private func calculateScoreAndRemoveAllBubbles() {
         let score = viewModel.getTotalScore()
-        let allBubbles = viewModel.getAllBubblesOnScreen()
-        for bubble in allBubbles {
-            viewModel.removeBubble(withViewModel: bubble.key)
-        }
+        viewModel.removeAllBubbles()
     }
 
     @objc private func createBubble(_ touch: UITapGestureRecognizer) {
