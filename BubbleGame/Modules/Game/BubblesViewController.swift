@@ -11,8 +11,8 @@ final class BubblesViewController: UIViewController {
     @IBOutlet private weak var countdownLabel: UILabel!
     @IBOutlet private weak var introductoryCountdownLabel: UILabel!
 
-    private let queue = DispatchQueue(label: "com.timer")
     private let utility = Utility()
+    private let viewModel = BubblesViewModel()
 
     private lazy var bubbleWidth: CGFloat = {
         (self.view.window?.windowScene?.screen.bounds.size.width ?? UIScreen.main.bounds.width) / 4
@@ -33,7 +33,7 @@ final class BubblesViewController: UIViewController {
     }
 
     private func startIntroductoryCountdownTimer() {
-        utility.executeRepeatedly(forCounts: 6, currentCount: 0, queue: queue,
+        utility.executeRepeatedly(forCounts: 6, currentCount: 0, queue: nil,
                                   handler: { [unowned self] currentCount in
             DispatchQueue.main.async {
                 UIView.transition(with: self.introductoryCountdownLabel,
@@ -95,8 +95,8 @@ final class BubblesViewController: UIViewController {
 
     @objc private func createBubble(_ touch: UITapGestureRecognizer) {
         let touchPoint = touch.location(in: view)
-        var xCenter = touchPoint.x - (bubbleWidth / 2)
-        var yCenter = touchPoint.y - (bubbleWidth / 2)
+        let xCenter = touchPoint.x - (bubbleWidth / 2)
+        let yCenter = touchPoint.y - (bubbleWidth / 2)
 
         /**if xCenter < (bubbleWidth / 2) {
             /// some part of the left side of the bubble will be outside the screen's edge,
@@ -122,7 +122,24 @@ final class BubblesViewController: UIViewController {
             yCenter = (UIScreen.main.bounds.height - (bubbleWidth / 2)) - 5
         }*/
 
-        let bubble = Bubble(frame: CGRect(x: xCenter, y: yCenter, width: bubbleWidth, height: bubbleWidth))
+        let bubble = BubbleView(frame: CGRect(x: xCenter, y: yCenter, width: bubbleWidth, height: bubbleWidth))
+        let id = UUID().uuidString
+        let bubbleViewModel = BubbleViewModel(id: id, delegate: self)
+        bubble.viewModel = bubbleViewModel
+        bubble.setupObserver()
+        viewModel.addBubble(withViewModel: bubbleViewModel, view: bubble)
+        bubbleViewModel.startCountdown()
         view.addSubview(bubble)
+    }
+}
+
+extension BubblesViewController: BubbleDelegate {
+    func countdownComplete(forBubble vm: BubbleViewModel) {
+        if let bubbleToBeRemoved = viewModel.getBubbleView(withViewModel: vm) {
+            DispatchQueue.main.async {
+                bubbleToBeRemoved.removeFromSuperview()
+            }
+        }
+        viewModel.removeBubble(withViewModel: vm)
     }
 }

@@ -8,9 +8,11 @@
 import Foundation
 
 struct Utility {
+    private static let queue = DispatchQueue(label: "com.timer")
+
     func executeRepeatedly(forCounts totalCount: Int,
                            currentCount: Int,
-                           queue: DispatchQueue,
+                           queue: DispatchQueue?,
                            handler: @escaping (Int) -> Void,
                            countdownCompletion: @escaping () -> Void) {
         guard currentCount < totalCount else {
@@ -18,11 +20,15 @@ struct Utility {
             return
         }
 
-        queue.asyncAfter(deadline: .now() + 1) {
+        var serialQueue: DispatchQueue = Self.queue
+        if let myQueue = queue {
+            serialQueue = myQueue
+        }
+        serialQueue.asyncAfter(deadline: .now() + 1) {
             handler(currentCount)
             executeRepeatedly(forCounts: totalCount,
                               currentCount: currentCount + 1,
-                              queue: queue,
+                              queue: serialQueue,
                               handler: handler,
                               countdownCompletion: countdownCompletion)
         }
