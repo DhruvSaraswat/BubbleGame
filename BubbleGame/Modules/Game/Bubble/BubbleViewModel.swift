@@ -25,22 +25,40 @@ final class BubbleViewModel: Hashable {
     }
     
     private let id: String
-    private let utility: Utility
+    private let timerQueue: DispatchQueue
     private let delegate: BubbleDelegate
     var updateLabelObserver: ((BubbleObserver) -> Void)?
+    private var timer: DispatchSourceTimer?
+    private var count: Int = 0
 
-    init(id: String, utility: Utility = Utility(), delegate: BubbleDelegate) {
+    init(id: String, timerQueue: DispatchQueue, delegate: BubbleDelegate) {
         self.id = id
-        self.utility = utility
+        self.timerQueue = timerQueue
         self.delegate = delegate
     }
 
     func startCountdown() {
-        utility.executeRepeatedly(forCounts: 11, currentCount: 0, queue: nil,
-                                  handler: { [unowned self] currentCount in
-            self.updateLabelObserver?(.updateBubbleLabel(value: "\(10 - currentCount)"))
-        }, countdownCompletion: { [unowned self] in
-            self.delegate.countdownComplete(forBubble: self)
-        })
+        timer = DispatchSource.makeTimerSource(queue: timerQueue)
+        timer?.schedule(deadline: .now(), repeating: .seconds(1))
+        timer?.setEventHandler { [unowned self] in
+            if count >= 10 {
+                stopTimer()
+                delegate.countdownComplete(forBubble: self)
+                return
+            }
+            updateLabelObserver?(.updateBubbleLabel(value: "\(10 - count)"))
+            count += 1
+        }
+        timer?.activate()
+    }
+
+    func stopTimer() {
+        timer = nil
+    }
+
+    func resetTimer() {
+        stopTimer()
+        count = 0
+        startCountdown()
     }
 }

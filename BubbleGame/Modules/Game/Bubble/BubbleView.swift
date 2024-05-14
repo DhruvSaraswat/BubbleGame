@@ -13,7 +13,7 @@ final class BubbleView: UIView {
         label.text = "10"
         label.numberOfLines = 1
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 17)
+        label.font = .systemFont(ofSize: 20)
         return label
     }()
 
@@ -44,6 +44,7 @@ final class BubbleView: UIView {
     private func addConstraints() {
         label.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         label.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        label.isHidden = true
     }
 
     private func setupActions() {
@@ -58,17 +59,19 @@ final class BubbleView: UIView {
 
     func setupObserver() {
         viewModel?.updateLabelObserver = { [unowned self] state in
-            debugPrint("MYLOG: INSIDE setupObserver()")
             switch state {
             case .updateBubbleLabel(let value):
-                DispatchQueue.main.async {
-                    self.label.text = value
+                DispatchQueue.main.async { [unowned self] in
+                    if label.isHidden {
+                        label.isHidden = false
+                    }
+                    label.text = value
                 }
             }
         }
     }
 
     @objc private func resetCounter() {
-
+        viewModel?.resetTimer()
     }
 }
