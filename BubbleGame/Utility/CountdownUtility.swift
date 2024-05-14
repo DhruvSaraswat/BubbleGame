@@ -1,5 +1,5 @@
 //
-//  Utility.swift
+//  CountdownUtility.swift
 //  BubbleGame
 //
 //  Created by Dhruv Saraswat on 14/05/24.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Utility {
+struct CountdownUtility {
     private static let queue = DispatchQueue(label: "com.timer")
 
     func executeRepeatedly(forCounts totalCount: Int,

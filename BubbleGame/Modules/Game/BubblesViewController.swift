@@ -11,7 +11,7 @@ final class BubblesViewController: UIViewController {
     @IBOutlet private weak var countdownLabel: UILabel!
     @IBOutlet private weak var introductoryCountdownLabel: UILabel!
 
-    private let utility = Utility()
+    private let utility = CountdownUtility()
     private let viewModel = BubblesViewModel()
     private let bubbleTimerQueue = DispatchQueue(label: "com.bubble.timer")
     private let countdownLabelFontSize: CGFloat = 28
@@ -28,6 +28,12 @@ final class BubblesViewController: UIViewController {
         hideIntroductoryCountdownLabel()
         hideCountdownLabel()
         removeTapGestureRecognizer()
+        viewModel.observer = { [unowned self] state in
+            switch state {
+            case .showNextScreen(globalRank: let rank):
+                debugPrint("RANK = \(String(describing: rank))")
+            }
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -75,7 +81,7 @@ final class BubblesViewController: UIViewController {
             }
         }, countdownCompletion: { [unowned self] in
             removeTapGestureRecognizer()
-            calculateScoreAndRemoveAllBubbles()
+            processScoreAndRemoveAllBubbles()
         })
     }
 
@@ -128,10 +134,13 @@ final class BubblesViewController: UIViewController {
         }
     }
 
-    private func calculateScoreAndRemoveAllBubbles() {
+    private func processScoreAndRemoveAllBubbles() {
         let score = viewModel.getTotalScore()
         viewModel.removeAllBubbles()
         viewModel.persistScoreDetails(score: score, level: rate)
+        Task {
+            await viewModel.sendScoreToServer(score: score)
+        }
     }
 
     @objc private func createBubble(_ touch: UITapGestureRecognizer) {

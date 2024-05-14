@@ -41,7 +41,7 @@ struct DifficultyLevelViewModel {
             difficultyLevelViewObserver?(.showNextScreen(rate: intRate))
 
         case .failure(let error):
-            debugPrint("error in authentication = \(error)")
+            debugPrint("error = \(error)")
             /// Show an error toast
         }
     }

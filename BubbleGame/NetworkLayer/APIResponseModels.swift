@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct LoginResponse: Codable {
+struct APIResponse: Codable {
     let message, status: String?
 
     enum CodingKeys: String, CodingKey {

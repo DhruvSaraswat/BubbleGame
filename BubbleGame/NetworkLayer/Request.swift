@@ -10,6 +10,7 @@ import Foundation
 enum Request: APIRequest {
     case authenticate(username: String, password: String)
     case getLevelDetails(level: Int)
+    case saveScore(score: Int, sessionID: String, username: String)
 
     var scheme: String {
         "http"
@@ -25,6 +26,8 @@ enum Request: APIRequest {
             return "/authenticate"
         case .getLevelDetails:
             return "/leveldetails"
+        case .saveScore:
+            return "/savescore"
         }
     }
 
@@ -42,6 +45,8 @@ enum Request: APIRequest {
             return "login={\"username\":\"\(username)\",\"password\":\"\(password)\"}"
         case .getLevelDetails(let level):
             return "level=\(level)"
+        case .saveScore(let score, let sessionID, let username):
+            return "score=\(score)&sessionID=\(sessionID)&username=\(username)"
         }
     }
 
@@ -54,7 +59,7 @@ enum Request: APIRequest {
 
     var method: HTTPMethod {
         switch self {
-        case .authenticate:
+        case .authenticate, .saveScore:
             return HTTPMethod.post
         case .getLevelDetails:
             return HTTPMethod.get
