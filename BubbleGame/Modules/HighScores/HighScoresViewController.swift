@@ -12,10 +12,21 @@ final class HighScoresViewController: UIViewController {
     @IBOutlet private weak var globalRankLabel: UILabel!
     @IBOutlet private weak var highScoresInfoLabel: UILabel!
 
+    private let viewModel = HighScoresViewModel()
+
     var rank: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.observer = { [unowned self] state in
+            switch state {
+            case .updateHighScores(highScores: let highScore):
+                DispatchQueue.main.async { [unowned self] in
+                    highScoresInfoLabel.text = highScore
+                }
+            }
+        }
+        viewModel.fetchHighScores()
     }
 
     override func viewDidAppear(_ animated: Bool) {

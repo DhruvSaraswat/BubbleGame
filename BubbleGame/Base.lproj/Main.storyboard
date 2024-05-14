@@ -183,14 +183,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RYv-OB-32I">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RYv-OB-32I">
                                 <rect key="frame" x="196.66666666666666" y="242" width="0.0" height="0.0"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y1n-qp-cni">
-                                <rect key="frame" x="139" y="282" width="115.33333333333331" height="35"/>
+                                <rect key="frame" x="139" y="262" width="115.33333333333331" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Play Again ?"/>
                                 <connections>
@@ -203,10 +203,10 @@
                         <constraints>
                             <constraint firstItem="Rnu-3i-Dhb" firstAttribute="centerX" secondItem="Mo9-DY-O9Q" secondAttribute="centerX" id="1cY-hV-1z1"/>
                             <constraint firstItem="RYv-OB-32I" firstAttribute="top" secondItem="9ej-dl-P2D" secondAttribute="bottom" constant="20" id="6zw-W0-2R3"/>
-                            <constraint firstItem="Y1n-qp-cni" firstAttribute="top" secondItem="RYv-OB-32I" secondAttribute="bottom" constant="40" id="9Yu-im-eRH"/>
+                            <constraint firstItem="Y1n-qp-cni" firstAttribute="top" secondItem="RYv-OB-32I" secondAttribute="bottom" constant="20" id="9Yu-im-eRH"/>
                             <constraint firstItem="RYv-OB-32I" firstAttribute="centerX" secondItem="Mo9-DY-O9Q" secondAttribute="centerX" id="DbF-zj-DDV"/>
                             <constraint firstItem="MtX-kT-EM1" firstAttribute="centerX" secondItem="Mo9-DY-O9Q" secondAttribute="centerX" id="Dzv-Wr-LVt"/>
-                            <constraint firstItem="RYv-OB-32I" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Mo9-DY-O9Q" secondAttribute="leading" constant="30" id="Lc1-wv-hDR"/>
+                            <constraint firstItem="RYv-OB-32I" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Mo9-DY-O9Q" secondAttribute="leading" constant="20" id="Lc1-wv-hDR"/>
                             <constraint firstItem="MtX-kT-EM1" firstAttribute="top" secondItem="Rnu-3i-Dhb" secondAttribute="bottom" constant="21" id="iTl-7s-dyG"/>
                             <constraint firstItem="Y1n-qp-cni" firstAttribute="centerX" secondItem="Mo9-DY-O9Q" secondAttribute="centerX" id="jRL-cW-Oja"/>
                             <constraint firstItem="9ej-dl-P2D" firstAttribute="top" secondItem="MtX-kT-EM1" secondAttribute="bottom" constant="26.670000000000002" id="l8a-Y4-61b"/>

@@ -38,6 +38,7 @@
 		7BA6C1FC2BF3F725004C256B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA6C1FB2BF3F725004C256B /* Constants.swift */; };
 		7BA6C1FF2BF404D1004C256B /* HighScoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA6C1FE2BF404D1004C256B /* HighScoresViewController.swift */; };
 		7BA6C2012BF40A63004C256B /* DismissTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA6C2002BF40A63004C256B /* DismissTransition.swift */; };
+		7BA6C2032BF415D5004C256B /* HighScoresViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA6C2022BF415D5004C256B /* HighScoresViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		7BA6C1FB2BF3F725004C256B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7BA6C1FE2BF404D1004C256B /* HighScoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoresViewController.swift; sourceTree = "<group>"; };
 		7BA6C2002BF40A63004C256B /* DismissTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissTransition.swift; sourceTree = "<group>"; };
+		7BA6C2022BF415D5004C256B /* HighScoresViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoresViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				7BA6C1FE2BF404D1004C256B /* HighScoresViewController.swift */,
+				7BA6C2022BF415D5004C256B /* HighScoresViewModel.swift */,
 			);
 			path = HighScores;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				7B9B78E62BEFCB2200DFE6DE /* LoginViewController.swift in Sources */,
 				7BA6C1FC2BF3F725004C256B /* Constants.swift in Sources */,
 				7B9B792F2BF2AAC900DFE6DE /* BubblesViewController.swift in Sources */,
+				7BA6C2032BF415D5004C256B /* HighScoresViewModel.swift in Sources */,
 				7B9B79182BF1218900DFE6DE /* Request.swift in Sources */,
 				7B9B791A2BF1336200DFE6DE /* NetworkEngine.swift in Sources */,
 				7B9B78EC2BEFCB2200DFE6DE /* BubbleGame.xcdatamodeld in Sources */,

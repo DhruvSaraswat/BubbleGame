@@ -9,7 +9,7 @@ import CoreData
 import Foundation
 
 enum DBResult<T> {
-    case sucess(_ response: T)
+    case success(_ response: T)
     case failure(_ error: String)
 }
 
@@ -39,7 +39,7 @@ final class CoreDataWorker<ManagedEntity, Entity>: CoreDataWorkerProtocol where 
                 }
                 let results = try context.fetch(fetchRequest) as? [ManagedEntity]
                 let items: [Entity] = results?.compactMap { $0.toEntity() as? Entity } ?? []
-                completion(.sucess(items))
+                completion(.success(items))
             } catch {
                 completion(.failure(error.localizedDescription))
             }
