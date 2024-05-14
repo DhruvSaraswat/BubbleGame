@@ -41,40 +41,40 @@ final class BubblesViewController: UIViewController {
                                   duration: 0.5,
                                   options: .transitionCrossDissolve,
                                   animations: { [unowned self] in
-                    self.introductoryCountdownLabel.text = "The game starts in \(5 - currentCount) ..."
-                    if self.introductoryCountdownLabel.isHidden {
+                    introductoryCountdownLabel.text = "The game starts in \(5 - currentCount) ..."
+                    if introductoryCountdownLabel.isHidden {
                         showIntroductoryCountdownLabel()
                     }
                 })
             }
         }, countdownCompletion: { [unowned self] in
-            self.hideIntroductoryCountdownLabel()
-            self.showCountdownLabel()
-            self.addTapGestureRecognizer()
+            hideIntroductoryCountdownLabel()
+            showCountdownLabel()
+            addTapGestureRecognizer()
         })
     }
 
     private func showIntroductoryCountdownLabel() {
         DispatchQueue.main.async { [unowned self] in
-            self.introductoryCountdownLabel.isHidden = false
+            introductoryCountdownLabel.isHidden = false
         }
     }
 
     private func hideIntroductoryCountdownLabel() {
         DispatchQueue.main.async { [unowned self] in
-            self.introductoryCountdownLabel.isHidden = true
+            introductoryCountdownLabel.isHidden = true
         }
     }
 
     private func showCountdownLabel() {
         DispatchQueue.main.async { [unowned self] in
-            self.countdownLabel.isHidden = false
+            countdownLabel.isHidden = false
         }
     }
 
     private func hideCountdownLabel() {
         DispatchQueue.main.async { [unowned self] in
-            self.countdownLabel.isHidden = true
+            countdownLabel.isHidden = true
         }
     }
 
