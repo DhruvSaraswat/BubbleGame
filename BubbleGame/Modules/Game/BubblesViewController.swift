@@ -32,6 +32,13 @@ final class BubblesViewController: UIViewController {
             switch state {
             case .showNextScreen(globalRank: let rank):
                 debugPrint("RANK = \(String(describing: rank))")
+                DispatchQueue.main.async {
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "HighScoresViewController") as! HighScoresViewController
+                    vc.rank = rank
+                    vc.modalPresentationStyle = .custom
+                    vc.transitioningDelegate = self
+                    self.present(vc, animated: true, completion: nil)
+                }
             }
         }
     }
@@ -162,5 +169,15 @@ final class BubblesViewController: UIViewController {
 extension BubblesViewController: BubbleDelegate {
     func countdownComplete(forBubble vm: BubbleViewModel) {
         viewModel.removeBubble(withViewModel: vm)
+    }
+}
+
+extension BubblesViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> (any UIViewControllerAnimatedTransitioning)? {
+        PresentTransition()
+    }
+
+    func animationController(forDismissed dismissed: UIViewController) -> (any UIViewControllerAnimatedTransitioning)? {
+        DismissTransition()
     }
 }

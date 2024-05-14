@@ -1,5 +1,5 @@
 //
-//  PresentAnimation.swift
+//  PresentTransition.swift
 //  BubbleGame
 //
 //  Created by Dhruv Saraswat on 13/05/24.
@@ -8,11 +8,11 @@
 import Foundation
 import UIKit
 
-final class PresentAnimation: NSObject {
+final class PresentTransition: NSObject {
     private var animator: UIViewImplicitlyAnimating?
 }
 
-extension PresentAnimation: UIViewControllerAnimatedTransitioning {
+extension PresentTransition: UIViewControllerAnimatedTransitioning {
     func transitionDuration(using transitionContext: (any UIViewControllerContextTransitioning)?) -> TimeInterval {
         0.3
     }

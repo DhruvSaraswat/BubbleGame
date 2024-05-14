@@ -15,7 +15,6 @@ final class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         viewModel.loginViewObserver = { [unowned self] state in
             switch state {
             case .showNextScreen:
@@ -38,6 +37,6 @@ final class LoginViewController: UIViewController {
 
 extension LoginViewController: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> (any UIViewControllerAnimatedTransitioning)? {
-        PresentAnimation()
+        PresentTransition()
     }
 }

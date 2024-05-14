@@ -52,6 +52,6 @@ final class DifficultyLevelViewController: UIViewController {
 
 extension DifficultyLevelViewController: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> (any UIViewControllerAnimatedTransitioning)? {
-        PresentAnimation()
+        PresentTransition()
     }
 }
