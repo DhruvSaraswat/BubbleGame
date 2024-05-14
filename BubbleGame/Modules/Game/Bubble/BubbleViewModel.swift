@@ -42,14 +42,15 @@ final class BubbleViewModel: Hashable {
     func startCountdown() {
         timer = DispatchSource.makeTimerSource(queue: timerQueue)
         timer?.schedule(deadline: .now(), repeating: .seconds(1))
-        timer?.setEventHandler { [unowned self] in
-            if count >= 10 {
-                stopTimer()
-                delegate.countdownComplete(forBubble: self)
+        timer?.setEventHandler { [weak self] in
+            guard let strongSelf = self else { return }
+            if strongSelf.count >= 10 {
+                strongSelf.stopTimer()
+                strongSelf.delegate.countdownComplete(forBubble: strongSelf)
                 return
             }
-            updateLabelObserver?(.updateBubbleLabel(value: "\(10 - count)"))
-            count += countdownRate
+            strongSelf.updateLabelObserver?(.updateBubbleLabel(value: "\(10 - strongSelf.count)"))
+            strongSelf.count += strongSelf.countdownRate
         }
         timer?.activate()
     }

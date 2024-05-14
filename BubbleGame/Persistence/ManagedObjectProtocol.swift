@@ -10,9 +10,7 @@ import Foundation
 
 protocol ManagedObjectProtocol {
     associatedtype Entity
-    associatedtype ManagedObject
     func toEntity() -> Entity?
-    func updateMOWithEntity(entity: Entity) -> ManagedObject?
 }
 
 protocol ManagedObjectConvertible {

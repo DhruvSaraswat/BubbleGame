@@ -17,7 +17,7 @@ extension ScoreObject: ManagedObjectConvertible {
     typealias ManagedObject = Score
 
     func toManagedObject(in context: NSManagedObjectContext) -> Score? {
-        var score = Score(context: context)
+        let score = Score(context: context)
         score.level = self.level
         score.score = self.score
         score.timestamp = self.timestamp
@@ -30,9 +30,5 @@ extension Score: ManagedObjectProtocol {
 
     func toEntity() -> ScoreObject? {
         ScoreObject(score: score, level: level, timestamp: timestamp)
-    }
-
-    func updateMOWithEntity(entity: ScoreObject) -> Score? {
-        self
     }
 }
